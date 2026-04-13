@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lead Lag Compensator</title>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>⚡ Lead / Lag Compensator Designer</h2>
+    <div class="sub">Frequency‑domain Bode plot · Gain & Phase margins · Real‑time tuning · Plant TF explicitly shown</div>
+
+    <div class="plot-card">
+        <div id="magPlot" class="plot"></div>
+    </div>
+    <div class="plot-card">
+        <div id="phasePlot" class="plot"></div>
+    </div>
+
+    <div class="controls-panel">
+        <div class="control-group" style="flex: 1.2;">
+            <label>📈 Plant numerator (coeffs, high → low)</label>
+            <input type="text" id="numInput" value="800">
+            <div class="value-hint">e.g., "1000" → G(s) = 1000 / (den)</div>
+            <label style="margin-top: 14px;">🔽 Plant denominator coeffs</label>
+            <input type="text" id="denInput" value="1,22,40,0">
+            <div class="value-hint">example: 0.001,0.101,1,0 → 0.001 s³ + 0.101 s² + s</div>
+            
+            <div class="tf-display" id="plantTFDisplay">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                    <span style="background:#2563eb40; padding:2px 8px; border-radius:20px; font-size:0.7rem;">🌿 PLANT TF</span>
+                    <span style="font-size:0.7rem; color:#8aaee0;">uncompensated</span>
+                </div>
+                <div id="tfString" class="tf-equation">G(s) = —</div>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <label>🎛️ Compensator mode</label>
+            <select id="modeSel">
+                <option value="lead">🚀 Lead (phase boost)</option>
+                <option value="lag" selected>🐢 Lag (low‑frequency gain)</option>
+            </select>
+
+            <label style="margin-top: 14px;">🔧 Parameter a</label>
+            <input type="number" id="aInput" value="0.142" step="0.01">
+            <div class="value-hint">Lead: a > 1 &nbsp;|&nbsp; Lag: a < 1</div>
+
+            <label style="margin-top: 14px;">⏱️ Parameter T (sec)</label>
+            <input type="number" id="TInput" value="35.2" step="0.1">
+            <div class="value-hint">Corner frequency ~ 1/T , 1/(aT)</div>
+        </div>
+
+        <div class="info-card" id="infoBox">
+            <div class="badge-mode">📊 MARGIN ANALYSIS</div>
+            <b>⚙️ Uncompensated</b><br>
+            ω<sub>gc</sub> : — <br>
+            PM : — ° <br><br>
+            <b>✅ Compensated</b><br>
+            ω<sub>gc</sub> : — <br>
+            PM : — ° <br>
+            <span style="font-size:12px;">(gain crossover freq & phase margin)</span>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
