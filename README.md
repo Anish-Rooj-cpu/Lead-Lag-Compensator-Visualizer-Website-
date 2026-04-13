@@ -1,6 +1,3 @@
-# 📄 README.md
-
-```markdown
 # ⚡ Lead / Lag Compensator Visualizer
 
 An interactive **Control Systems Design Tool** that allows you to visualize and tune **Lead and Lag compensators** in real time using Bode plots.
@@ -11,20 +8,23 @@ This project is built using **HTML, CSS, and JavaScript (Plotly.js)** and is des
 
 ## 🚀 Features
 
-- 📊 Real-time **Bode Magnitude & Phase plots**
-- 🎛️ Interactive tuning of compensator parameters:
-  - Gain factor `a`
-  - Time constant `T`
-- 🔄 Switch between:
-  - 🚀 Lead compensator (phase boost)
-  - 🐢 Lag compensator (steady-state improvement)
-- 📈 Automatic calculation of:
-  - Gain crossover frequency (ωgc)
-  - Phase margin (PM)
-  - Gain margin (GM)
-- 🧮 Custom plant transfer function input
-- 🧾 Live display of transfer function
-- 📱 Fully responsive modern UI
+* 📊 Real-time **Bode Magnitude & Phase plots**
+* 🎛️ Interactive tuning of compensator parameters:
+
+  * Gain factor `a`
+  * Time constant `T`
+* 🔄 Switch between:
+
+  * 🚀 Lead compensator (phase boost)
+  * 🐢 Lag compensator (steady-state improvement)
+* 📈 Automatic calculation of:
+
+  * Gain crossover frequency (ωgc)
+  * Phase margin (PM)
+  * Gain margin (GM)
+* 🧮 Custom plant transfer function input
+* 🧾 Live display of transfer function
+* 📱 Fully responsive modern UI
 
 ---
 
@@ -32,48 +32,47 @@ This project is built using **HTML, CSS, and JavaScript (Plotly.js)** and is des
 
 The compensator used:
 
-- **Lead Compensator:**
+* **Lead Compensator:**
   Gc(s) = (1 + aTs) / (1 + Ts), where a > 1
 
-- **Lag Compensator:**
+* **Lag Compensator:**
   Gc(s) = (1 + aTs) / (1 + Ts), where a < 1
 
 The system computes:
 
-- Bode magnitude: 20 log₁₀ |G(jω)|
-- Phase: ∠G(jω)
-- Gain crossover: |G(jω)| = 1
-- Phase margin: PM = 180° + ∠G(jωgc)
+* Bode magnitude: 20 log₁₀ |G(jω)|
+* Phase: ∠G(jω)
+* Gain crossover: |G(jω)| = 1
+* Phase margin: PM = 180° + ∠G(jωgc)
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** HTML, CSS
-- **Logic:** Vanilla JavaScript
-- **Plotting:** Plotly.js
+* **Frontend:** HTML, CSS
+* **Logic:** Vanilla JavaScript
+* **Plotting:** Plotly.js
 
 ---
 
 ## 📂 Project Structure
 
 ```
-
-├── index.html     # UI structure 
-├── style.css      # Styling & responsiveness 
-├── script.js      # Core computation & plotting logic 
-
-````
+├── index.html     # UI structure
+├── style.css      # Styling & responsiveness
+├── script.js      # Core computation & plotting logic
+```
 
 ---
 
 ## ⚙️ How to Run
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/lead-lag-compensator-visualizer.git
-   cd lead-lag-compensator-visualizer
-````
+
+```bash
+git clone https://github.com/your-username/lead-lag-compensator-visualizer.git
+cd lead-lag-compensator-visualizer
+```
 
 2. Open `index.html` in your browser.
 
@@ -151,13 +150,3 @@ MIT License
 **Anish**
 Electronics & Telecommunication Engineering
 Jadavpur University
-
-```
-
----
-
-If you want, next I can:
-- Add **GitHub badges (stars, forks, license)**
-- Write a **LinkedIn post** for this project  
-- Or help you deploy it on **GitHub Pages** 🚀
-```
